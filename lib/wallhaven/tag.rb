@@ -1,8 +1,8 @@
 module Wallhaven
-  class Tag
+  class Tag < Client
 
     def self.get(id)
-      Client.get('/tag/' + id.to_s)["data"]
+      Client.get('/tag/' + id.to_s, { query: { apikey: @@api_key }})
     end
   end
 end
