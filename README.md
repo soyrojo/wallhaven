@@ -18,9 +18,21 @@ Or install it yourself as:
 
     $ gem install wallhaven
 
+## Requirements:
+* Ruby 2.0+
+
 ## Usage
 
-TODO
+1. Setup your API key
+    `Wallhaven::Client.new(api_key: <your_key>)`
+
+2. Make a request
+    ```ruby
+    Wallhaven::Wallpaper.get(<some_id>)
+    Wallhaven::Tag.get(<some_id>)
+    Wallhaven::Search.get
+    Wallhaven::Settings.get
+    ```
 
 ## Gem Development
 
