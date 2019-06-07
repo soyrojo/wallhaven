@@ -1,8 +1,8 @@
 module Wallhaven
-  class Wallpaper
+  class Wallpaper < Client
 
     def self.get(id)
-      Client.get('/w/' + id.to_s)["data"]
+      Client.get('/w/' + id.to_s, { query: { apikey: @@api_key }})
     end
   end
 end

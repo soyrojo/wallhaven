@@ -1,8 +1,8 @@
 module Wallhaven
-  class Settings
+  class Settings < Client
 
     def self.get(id)
-      Client.get('/settings/')["data"]
+      Client.get('/settings/', { query: { apikey: @@api_key }})
     end
   end
 end

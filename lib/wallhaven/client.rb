@@ -5,11 +5,10 @@ module Wallhaven
     include HTTParty
     base_uri 'https://wallhaven.cc/api/v1/'
 
-    attr_accessor :api_token, :params
+    attr_accessor :api_key
 
-    def initialize(api_token: nil, *params)
-      @api_token = api_token
-      @params    = params
+    def initialize(api_key: nil)
+      @api_key = api_key
     end
   end
 end
