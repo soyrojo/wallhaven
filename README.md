@@ -1,5 +1,7 @@
 # Wallhaven Gem
 
+[![Gem Version](https://badge.fury.io/rb/wallhaven.svg)](https://badge.fury.io/rb/wallhaven)
+
 A simple gem to interact with Wallhaven's API.
 
 ## Installation
