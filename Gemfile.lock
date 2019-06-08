@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    wallhaven (0.3.1)
+    wallhaven (1.0.0)
       httparty (~> 0.17)
 
 GEM
