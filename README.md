@@ -4,6 +4,8 @@
 
 A simple gem to interact with Wallhaven's API.
 
+You can find the official API documentation [here](https://wallhaven.cc/help/api).
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -26,14 +28,17 @@ Or install it yourself as:
 ## Usage
 
 1. Setup your API key
-    `Wallhaven::Client.new(api_key: <your_key>)`
 
-2. Make a request
+    `Wallhaven.apikey = "<your_key>"`
+
+    **Note**: You can still make requests without an apikey, but you won't be able to get NSFW results.
+
+2. Make a request to an endpoint:
     ```ruby
-    Wallhaven::Wallpaper.get(<some_id>)
-    Wallhaven::Tag.get(<some_id>)
-    Wallhaven::Search.get
-    Wallhaven::Settings.get
+    Wallhaven.wallpaper(<some_id>)
+    Wallhaven.tag(<some_id>)
+    Wallhaven.search({ filter_1: some_filter, filter_2: some_other_filter })
+    Wallhaven.settings
     ```
 
 ## Gem Development
