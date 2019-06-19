@@ -1,0 +1,13 @@
+---
+apikey:
+q:
+categories: 110
+purity: 100
+sorting: date_added
+order: desc
+topRange: 1m
+atleast: 1920x1080
+resolutions: 1920x1080
+ratios: 16x9
+colors:
+page:

@@ -1,0 +1,46 @@
+#!/usr/bin/env ruby
+
+require 'optparse'
+require 'yaml'
+
+$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), "/../lib"))
+require 'wallhaven'
+
+# opts = {
+#   apikey:   ENV['WALLHAVEN_API_KEY'],
+#   config:   "#{location}/wallhaven.yml"
+# }
+
+OptionParser.new do |o|
+  o.banner = "USAGE: #{$PROGRAM_NAME} download [options]"
+
+  o.on("-c",
+       "--config [YML FILE]",
+       "Specify the location of the configuration file for the downloader.") do |c|
+    opts[:config] = YAML.load_file(c)
+  end
+
+  o.on("-a",
+       "--apikey [API KEY]",
+       "Your Wallhaven apikey.") do |a|
+    opts[:apikey] = a
+  end
+
+  o.on("-l",
+       "--location [LOCATION FOLDER]",
+       "Folder where to download wallpapers.") do |l|
+    opts[:location] = l
+  end
+
+  o.on("-h", "--help", "Show help documentation.") do |h|
+    puts o
+    exit 0
+  end
+
+  o.on("-v", "--version", "Show wallhaven version.") do |ver|
+    puts "Wallhaven #{Wallhaven::VERSION}"
+    exit 0
+  end
+end.parse!
+
+Wallhaven::CommandLine.execute(opts)
