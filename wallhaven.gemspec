@@ -20,7 +20,9 @@ Gem::Specification.new do |spec|
   all_files          = `git ls-files`.split("\n")
   test_files         = `git ls-files -- {test,spec,features}/*`.split("\n")
   spec.files         = all_files - test_files
-  spec.executables   = `git ls-files -- bin/*`.split("\n").map { |f| File.basename(f) }
+
+  spec.bindir        = "bin"
+  spec.executables   = %w[wallhaven]
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "bundler", "~> 2.0"
